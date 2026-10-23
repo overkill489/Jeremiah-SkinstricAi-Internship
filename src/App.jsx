@@ -9,6 +9,7 @@ import ImageSelection from "./pages/ImageSelection";
 import AnalysisLoading from "./pages/AnalysisLoading";
 import Analysis from "./pages/Analysis";
 import Demographics from "./pages/Demographics";
+import Camera from "./pages/Camera";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/analysis-loading" element={<AnalysisLoading />} />
         <Route path="/analysis" element={<Analysis />} />
         <Route path="/demographics" element={<Demographics />} />
+        <Route path="/camera" element={<Camera />} />
       </Routes>
     </BrowserRouter>
   );

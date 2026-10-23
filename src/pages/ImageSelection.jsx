@@ -60,6 +60,11 @@ export default function ImageSelection() {
             type="button"
             aria-label="Allow AI to scan your face"
             className="relative z-10 h-[110px] w-[110px] cursor-pointer transition-transform duration-300 hover:scale-110"
+            onClick={() =>
+              navigate("/camera", {
+                state: { name, city },
+              })
+            }
           >
             <img
               src={cameraIcon}
