@@ -53,7 +53,7 @@ export default function ImageSelection() {
       </p>
 
       <div className="flex w-full max-w-[1250px] flex-col items-center justify-around gap-16 px-4 py-20 lg:flex-row lg:gap-8">
-        <div className="relative flex h-[350px] w-[350px] shrink-0 items-center justify-center">
+        <div className="relative flex h-[350px] w-[350px] shrink-0 items-center justify-center image-selection-entrance animate-[enterFromLeft_1s_cubic-bezier(0.22,1,0.36,1)_both]">
           <RotatingDiamonds />
 
           <button
@@ -80,7 +80,7 @@ export default function ImageSelection() {
           </div>
         </div>
 
-        <div className="relative flex h-[350px] w-[350px] shrink-0 items-center justify-center">
+        <div className="relative flex h-[350px] w-[350px] shrink-0 items-center justify-center image-selection-entrance animate-[enterFromRight_1s_cubic-bezier(0.22,1,0.36,1)_both]">
           <RotatingDiamonds />
 
           <button

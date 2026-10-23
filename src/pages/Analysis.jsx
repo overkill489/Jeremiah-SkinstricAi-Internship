@@ -9,9 +9,19 @@ export default function Analysis() {
   const city = location.state?.city || "";
   const analysisData = location.state?.analysisData;
 
+  const goToDemographics = () => {
+    navigate("/demographics", {
+      state: {
+        name,
+        city,
+        analysisData,
+      },
+    });
+  };
+
   return (
-    <main className="relative flex h-[calc(100vh-64px)] w-full items-center justify-center overflow-hidden bg-white">
-      <div className="absolute top-4 left-8 text-xs text-[#1A1B1C]">
+    <main className="relative flex h-[calc(100dvh-64px)] w-full items-center justify-center overflow-hidden bg-white">
+      <div className="absolute top-4 left-8 text-xs text-[#1A1B1C] animate-[contentAppear_0.7s_ease-out_both]">
         <h2 className="mb-3 font-semibold">A.I. ANALYSIS</h2>
 
         <p>A.I. HAS ESTIMATED THE FOLLOWING.</p>
@@ -24,16 +34,8 @@ export default function Analysis() {
         <div className="grid h-[300px] w-[300px] rotate-45 grid-cols-2 grid-rows-2 gap-1 sm:h-[340px] sm:w-[340px]">
           <button
             type="button"
-            onClick={() =>
-              navigate("/demographics", {
-                state: {
-                  name,
-                  city,
-                  analysisData,
-                },
-              })
-            }
-            className="flex cursor-pointer items-center justify-center bg-[#E1E3E6] p-4 transition-colors duration-300 hover:bg-[#B8BCC3]"
+            onClick={goToDemographics}
+            className="flex cursor-pointer items-center justify-center bg-[#E1E3E6] p-4 transition-colors duration-300 hover:bg-[#B8BCC3] animate-[diamondReveal_0.6s_cubic-bezier(0.22,1,0.36,1)_both]"
           >
             <span className="-rotate-45 text-center text-[11px] font-semibold">
               DEMOGRAPHICS
@@ -42,7 +44,8 @@ export default function Analysis() {
 
           <button
             type="button"
-            className="flex cursor-not-allowed items-center justify-center bg-[#F1F1F3] p-4 transition-colors duration-300 hover:bg-[#D1D4DA]"
+            disabled
+            className="flex cursor-not-allowed items-center justify-center bg-[#F1F1F3] p-4 transition-colors duration-300 hover:bg-[#D1D4DA] animate-[diamondReveal_0.6s_cubic-bezier(0.22,1,0.36,1)_0.2s_both]"
           >
             <span className="-rotate-45 text-center text-[11px] font-semibold">
               SKIN TYPE
@@ -53,7 +56,8 @@ export default function Analysis() {
 
           <button
             type="button"
-            className="flex cursor-not-allowed items-center justify-center bg-[#F1F1F3] p-4 transition-colors duration-300 hover:bg-[#D1D4DA]"
+            disabled
+            className="flex cursor-not-allowed items-center justify-center bg-[#F1F1F3] p-4 transition-colors duration-300 hover:bg-[#D1D4DA] animate-[diamondReveal_0.6s_cubic-bezier(0.22,1,0.36,1)_0.4s_both]"
           >
             <span className="-rotate-45 text-center text-[11px] font-semibold">
               COSMETIC
@@ -64,7 +68,8 @@ export default function Analysis() {
 
           <button
             type="button"
-            className="flex cursor-not-allowed items-center justify-center bg-[#F1F1F3] p-4 transition-colors duration-300 hover:bg-[#D1D4DA]"
+            disabled
+            className="flex cursor-not-allowed items-center justify-center bg-[#F1F1F3] p-4 transition-colors duration-300 hover:bg-[#D1D4DA] animate-[diamondReveal_0.6s_cubic-bezier(0.22,1,0.36,1)_0.6s_both]"
           >
             <span className="-rotate-45 text-center text-[11px] font-semibold">
               WEATHER
@@ -73,7 +78,7 @@ export default function Analysis() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-8">
+      <div className="absolute bottom-8 left-8 animate-[contentAppear_0.7s_ease-out_0.4s_both]">
         <DiamondButton
           direction="left"
           label="BACK"
@@ -85,8 +90,12 @@ export default function Analysis() {
         />
       </div>
 
-      <div className="absolute right-8 bottom-8">
-        <DiamondButton direction="right" label="GET SUMMARY" />
+      <div className="absolute right-8 bottom-8 animate-[contentAppear_0.7s_ease-out_0.6s_both]">
+        <DiamondButton
+          direction="right"
+          label="GET SUMMARY"
+          onClick={goToDemographics}
+        />
       </div>
     </main>
   );

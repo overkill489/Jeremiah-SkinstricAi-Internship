@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import DiamondButton from "../components/DiamondButton";
 
@@ -10,6 +10,13 @@ export default function Location() {
   const [city, setCity] = useState(location.state?.city || "");
   const [status, setStatus] = useState("typing");
 
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (status === "typing") {
+      inputRef.current?.focus();
+    }
+  }, [status]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +52,7 @@ export default function Location() {
       setStatus("typing");
       alert("Something went wrong. Please try again.");
     }
-  }; 
+  };
 
   const handleProceed = () => {
     navigate("/image-selection", {
@@ -68,26 +75,27 @@ export default function Location() {
   };
 
   return (
-    <main className="relative flex h-[calc(100vh-64px)] w-full items-center justify-center overflow-hidden bg-white">
-      <p className="absolute top-4 left-8 text-xs font-semibold text-[#1A1B1C]">
+    <main className="relative flex h-[calc(100dvh-64px)] w-full items-center justify-center overflow-hidden bg-white">
+      <p className="absolute top-4 left-8 text-xs font-semibold text-[#1A1B1C] animate-[contentAppear_0.7s_ease-out_both]">
         TO START ANALYSIS
       </p>
 
-      <div className="relative flex h-[390px] w-[390px] items-center justify-center">
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="absolute h-[350px] w-[350px] border border-dotted border-[#D1D1D1] animate-[diamondSpin_23s_linear_infinite]" />
+      <div className="relative flex h-[390px] w-[390px] max-w-[90vw] items-center justify-center">
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center animate-[diamondGrow_1s_cubic-bezier(0.22,1,0.36,1)_both]">
+          <div className="absolute h-[350px] w-[350px] max-h-[80vw] max-w-[80vw] border border-dotted border-[#D1D1D1] animate-[diamondSpin_23s_linear_infinite]" />
 
-          <div className="absolute h-[390px] w-[390px] border border-dotted border-[#D1D1D1] animate-[diamondSpin_37s_linear_infinite_reverse]" />
+          <div className="absolute h-[390px] w-[390px] max-h-[90vw] max-w-[90vw] border border-dotted border-[#D1D1D1] animate-[diamondSpin_37s_linear_infinite_reverse]" />
         </div>
 
         {status === "typing" && (
           <form
             onSubmit={handleSubmit}
-            className="relative z-10 flex flex-col items-center"
+            className="relative z-10 flex flex-col items-center animate-[contentAppear_0.8s_ease-out_0.35s_both]"
           >
             <p className="mb-1 text-[10px] text-[#A0A0A0]">CLICK TO TYPE</p>
 
             <input
+              ref={inputRef}
               type="text"
               value={city}
               onChange={(e) => setCity(e.target.value)}
@@ -111,7 +119,7 @@ export default function Location() {
         {status === "loading" && (
           <div
             role="status"
-            className="relative z-10 flex flex-col items-center gap-6"
+            className="relative z-10 flex flex-col items-center gap-6 animate-[contentAppear_0.5s_ease-out_both]"
           >
             <h2 className="text-lg text-[#606B7D]">Processing submission</h2>
 
@@ -126,7 +134,7 @@ export default function Location() {
         {status === "complete" && (
           <div
             role="status"
-            className="relative z-10 flex flex-col items-center gap-4"
+            className="relative z-10 flex flex-col items-center gap-4 animate-[contentAppear_0.6s_ease-out_both]"
           >
             <h2 className="text-2xl text-[#1A1B1C]">Thank you!</h2>
 
@@ -135,12 +143,12 @@ export default function Location() {
         )}
       </div>
 
-      <div className="absolute bottom-8 left-8">
+      <div className="absolute bottom-8 left-8 animate-[contentAppear_0.7s_ease-out_0.5s_both]">
         <DiamondButton direction="left" label="BACK" onClick={handleBack} />
       </div>
 
       {status === "complete" && (
-        <div className="absolute right-8 bottom-8">
+        <div className="absolute right-8 bottom-8 animate-[contentAppear_0.6s_ease-out_both]">
           <DiamondButton
             direction="right"
             label="PROCEED"
