@@ -1,10 +1,10 @@
 # SKINSTRIC AI
 
-### AI-Powered Skin Analysis Web Application
+### AI-Powered Facial Analysis Web Application
 
-SKINSTRIC AI is a responsive web application built with React, Vite, and Tailwind CSS. It allows users to upload an image or capture a photo using their device's camera and receive AI-generated demographic predictions.
+SKINSTRIC AI is a modern, responsive web application developed using React, Vite, and Tailwind CSS. The application allows users to capture or upload facial images and receive AI-generated demographic estimates through an interactive analysis dashboard.
 
-The application features a modern interface based on Figma designs, interactive animations, real API integration, and a detailed demographics dashboard.
+Built as part of a frontend development internship, the project focuses on responsive design, API integration, dynamic user interfaces, custom animations, and an engaging user experience.
 
 ## Live Demo
 
@@ -14,39 +14,41 @@ The application features a modern interface based on Figma designs, interactive 
 
 ## Features
 
-### Responsive User Interface
-- Responsive layouts for desktop, tablet, and mobile devices
-- Interactive diamond elements and custom CSS animations
-- Smooth page entrance effects and hover interactions
-- Design implementation based on Figma references
+### Responsive Design
+- Fully responsive desktop, tablet, and mobile layouts
+- Modern, minimalistic interface inspired by provided Figma designs
+- Interactive diamond elements and hover effects
+- Custom page entrance animations
+- Smooth transitions and dynamic UI elements
 
 ### User Information Collection
-- Name and location input forms
-- Automatic input focus
-- Form validation
-- Integration with the SKINSTRIC Phase One API
-- Loading and submission confirmation screens
+- Interactive name and location input fields
+- Automatic input focus for improved usability
+- Form validation and submission handling
+- Loading and confirmation states
+- Integration with external backend services
 
-### Camera Integration
-- Browser camera permission handling
+### Camera Functionality
+- Browser-based camera access
+- Camera permission handling
 - Live camera preview
-- Photo capture functionality
-- Photo retake and preview options
-- Camera cleanup when navigating away
-- Support for compatible desktop and mobile cameras
+- Photo capture and preview
+- Retake photo functionality
+- Camera cleanup when leaving the page
+- Responsive camera experience
 
 ### Gallery Upload
 - Upload images directly from a device
 - Image file validation
-- Base64 image conversion
-- Integration with the AI analysis workflow
+- Support for common image formats
+- Integration with the analysis workflow
 
 ### AI Analysis
-- Integration with the SKINSTRIC Phase Two API
-- Real-time image submission
-- Loading animations during analysis
-- API response handling
-- Navigation to analysis results
+- External AI service integration
+- Image processing and submission
+- Interactive loading animations
+- Dynamic analysis results
+- Error handling during API communication
 
 ### Demographics Dashboard
 - AI-generated race, age, and gender estimates
@@ -61,118 +63,114 @@ The application features a modern interface based on Figma designs, interactive 
 
 | Technology | Purpose |
 |---|---|
-| React | Frontend user interface |
-| Vite | Development server and production builds |
+| React | Building reusable UI components |
+| Vite | Development environment and production builds |
 | JavaScript | Application functionality |
 | Tailwind CSS | Responsive layouts and styling |
-| CSS Animations | Page transitions and visual effects |
-| React Router DOM | Client-side routing |
-| React Icons | Interface icons |
-| Fetch API | Backend API communication |
-| MediaDevices API | Browser camera access |
-| FileReader API | Image-to-Base64 conversion |
-| Vercel | Hosting and deployment |
-| Git & GitHub | Version control and source code management |
+| CSS | Custom animations and visual effects |
+| React Router DOM | Client-side navigation |
+| React Icons | User interface icons |
+| Fetch API | Backend service communication |
+| MediaDevices API | Camera access and photo capture |
+| FileReader API | Image processing |
+| Git & GitHub | Version control |
+| Vercel | Application deployment |
 
 ## Application Workflow
 
 ### 1. Landing Page
 
-Users are welcomed with an animated interface featuring the SKINSTRIC design and interactive navigation.
+The application begins with an animated landing experience featuring interactive diamond elements and smooth entrance animations.
 
-Selecting **TAKE TEST** or **ENTER EXPERIENCE** begins the analysis process.
+Users can begin the analysis process by selecting **TAKE TEST** or **ENTER EXPERIENCE**.
 
 ### 2. Introduction
 
-Users enter their name through an animated input interface.
+Users enter their name through an interactive input field.
 
-The field automatically receives focus, and pressing Enter advances to the next page.
+The page includes animated diamond outlines, automatic input focus, and keyboard navigation.
 
 ### 3. Location
 
-Users enter their city or location.
+Users enter their location, which is submitted through the application's backend integration.
 
-The information is submitted to the Phase One API. After successful submission, a confirmation screen allows the user to continue.
+A confirmation screen appears after successful submission.
 
 ### 4. Image Selection
 
-Users choose between:
+Users can choose between two methods of providing an image.
 
 **Camera**
-- Grant camera permission
-- View the live camera feed
+- Grant camera access
+- View a live camera preview
 - Capture a photo
-- Preview or retake the photo
+- Review or retake the image
 - Submit the selected photo for analysis
 
 **Gallery**
-- Select an existing image from their device
-- Upload the image for analysis
+- Choose an existing image
+- Upload the selected image for analysis
 
 ### 5. Analysis Loading
 
-The selected image is converted into Base64 and submitted to the Phase Two API.
+The application prepares and submits the selected image to an external AI analysis service.
 
-A loading interface is displayed while the application processes the request.
+An animated loading interface provides feedback while the request is processed.
 
 ### 6. Analysis
 
-The application displays four categories:
+The analysis interface displays four categories:
 
 - Demographics
 - Skin Type Details
 - Cosmetic Concerns
 - Weather
 
-The Demographics section is functional. The remaining categories are displayed as part of the interface but are not currently implemented.
+The Demographics section is currently functional. The remaining categories are included as part of the interface design.
 
 ### 7. Demographics
 
-Users can review the API-generated demographic predictions for race, age, and gender.
+The Demographics dashboard displays AI-generated estimates and confidence scores.
 
-The page includes an animated confidence chart, confidence scores, category switching, RESET and CONFIRM controls, and navigation back to the analysis page.
+Users can switch between demographic categories, inspect individual predictions, update selections, reset their choices, and confirm their results.
 
-**Note:** AI-generated demographic predictions are estimates and should not be treated as definitive information about an individual.
+**Disclaimer:** AI-generated demographic predictions are estimates and should not be considered definitive information about an individual's identity or characteristics.
 
-## Getting Started
+## Installation
 
 ### Prerequisites
-
-Make sure you have the following installed:
 
 - Node.js
 - npm
 - Git
 
-### Installation
-
-**1. Clone the repository**
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/overkill489/Jeremiah-SkinstricAi-Internship.git
 ```
 
-**2. Navigate to the project directory**
+### 2. Navigate to the Project
 
 ```bash
 cd Jeremiah-SkinstricAi-Internship
 ```
 
-**3. Install dependencies**
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-**4. Start the development server**
+### 4. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-**5. Open the local development URL**
+### 5. Open the Application
 
-The terminal will display the address, typically:
+Open the local development URL displayed in your terminal, typically:
 
 ```text
 http://localhost:5173/
@@ -191,57 +189,6 @@ To preview the production build locally:
 ```bash
 npm run preview
 ```
-
-The application is deployed using Vercel.
-
-## API Integration
-
-SKINSTRIC AI uses two external API endpoints.
-
-### Phase One — User Information
-
-**Endpoint:**
-
-```text
-https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne
-```
-
-**Method:** POST
-
-**Purpose:** Submit the user's name and location.
-
-Example request:
-
-```json
-{
-  "name": "Test User",
-  "location": "Dallas"
-}
-```
-
-### Phase Two — Image Analysis
-
-**Endpoint:**
-
-```text
-https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo
-```
-
-**Method:** POST
-
-**Purpose:** Submit an uploaded or captured image for AI analysis.
-
-The image is converted into a Base64 string before submission.
-
-Example request structure:
-
-```json
-{
-  "image": "BASE64_IMAGE_DATA"
-}
-```
-
-The API returns demographic prediction data, including age, gender, and race confidence scores.
 
 ## Project Structure
 
@@ -269,54 +216,69 @@ src/
 └── main.jsx
 ```
 
-## Camera Requirements
-
-The camera feature uses the browser's MediaDevices API.
-
-For camera functionality, users need:
-
-- A compatible browser
-- A working webcam or mobile camera
-- Camera permissions enabled
-- A secure HTTPS connection or localhost development environment
-
-Camera functionality depends on the user's device and browser permissions.
-
-Images selected for analysis are submitted to the external SKINSTRIC API.
-
 ## Design and Animations
 
-The application recreates the provided Figma interface using React, Tailwind CSS, and custom CSS animations.
+The application incorporates custom animations to create an engaging user experience while maintaining the original design direction.
 
-Animations include:
+Key animations include:
 
 - Cinematic Landing Page entrance
-- Animated dotted diamonds
-- Smooth input and content reveals
-- Camera and gallery entrance transitions
-- Staggered Analysis category animations
-- Demographics dashboard entrance effects
-- Animated confidence percentages and circular charts
+- Rotating dotted diamond elements
+- Smooth input field reveals
+- Camera and gallery entrance animations
+- Staggered category animations
+- Animated demographic confidence indicators
+- Dashboard entrance effects
+- Interactive hover transitions
+
+Animations are implemented primarily through CSS and Tailwind CSS without relying on a dedicated animation library.
+
+## Camera Requirements
+
+Camera functionality requires:
+
+- A compatible web browser
+- A device with an available camera
+- User permission to access the camera
+- A secure HTTPS connection or localhost
+
+Camera availability depends on browser and device permissions.
+
+## Privacy Considerations
+
+The application requests access to the camera only when users choose the camera option.
+
+Users can review or retake captured photographs before submitting them for analysis.
+
+Selected images and user-provided information are transmitted to external services as part of the analysis workflow.
+
+Users should avoid submitting images or information they are not authorized to share.
 
 ## Deployment
 
-The application is hosted on Vercel.
+The application is deployed using Vercel.
 
-**Live Application:**
-
+**Live Website:**  
 https://jeremiah-skinstricai-internshipvercel-ckih3n8jt-bigboycode.vercel.app/
 
-**Source Code:**
-
+**GitHub Repository:**  
 https://github.com/overkill489/Jeremiah-SkinstricAi-Internship
+
+## Future Improvements
+
+Potential future enhancements include:
+
+- Implementation of additional analysis categories
+- Expanded AI-powered analysis features
+- Enhanced user feedback and accessibility
+- Additional image validation
+- Further performance optimizations
 
 ## Project Status
 
 **Completed — Frontend Internship Project**
 
-The application includes the full experience from information collection through image capture or upload, API analysis, and interactive demographic results.
-
-Potential future improvements include implementing the remaining analysis categories and expanding the available AI analysis features.
+The implemented application supports the complete user journey from information collection through image capture or upload, AI analysis, and interactive demographic results.
 
 ## Author
 
@@ -324,4 +286,4 @@ Potential future improvements include implementing the remaining analysis catego
 
 Frontend Developer
 
-Built as part of a frontend development internship project using React, Vite, Tailwind CSS, JavaScript, and external AI APIs.
+Developed as part of a frontend development internship using React, Vite, JavaScript, and Tailwind CSS.
