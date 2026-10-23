@@ -1,4 +1,4 @@
-import { imageToBase64 } from "../utils/imageToBase64";
+import { imageToBase64 } from "../utils/ImageToBase64";
 
 export async function analyzeImage(file) {
   if (!file || !file.type.startsWith("image/")) {
