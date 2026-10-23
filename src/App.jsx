@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 
-import Landing from "./pages/landing";
+import Landing from "./pages/Landing";
 import Introduction from "./pages/Introduction";
 import Location from "./pages/Location";
 import ImageSelection from "./pages/ImageSelection";
